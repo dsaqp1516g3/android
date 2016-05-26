@@ -22,7 +22,7 @@ public class CasalCreateActivity extends AppCompatActivity {
     EditText etContent = null;
     Button btCreate = null;
     private CreateCasalTask mCreateCasalTask = null;
-    private final static String TAG = LoginActivity.class.toString();
+    private final static String TAG = UsersListActivity.class.toString();
     class CreateCasalTask extends AsyncTask<Void, Void, Boolean> {
         private Form form;
 

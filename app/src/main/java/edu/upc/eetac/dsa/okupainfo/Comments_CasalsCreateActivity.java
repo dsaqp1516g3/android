@@ -21,7 +21,7 @@ public class Comments_CasalsCreateActivity extends AppCompatActivity {
     EditText etContent = null;
     Button btCreate = null;
     private CreateCommentCasalTask mCreateCommentCasalTask = null;
-    private final static String TAG = LoginActivity.class.toString();
+    private final static String TAG = CasalsListActivity.class.toString();
     class CreateCommentCasalTask extends AsyncTask<Void, Void, Boolean> {
         private Form form;
 

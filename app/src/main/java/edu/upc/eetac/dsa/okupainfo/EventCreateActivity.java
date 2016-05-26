@@ -22,7 +22,7 @@ public class EventCreateActivity extends AppCompatActivity {
     EditText etDescription = null;
     Button btCreate = null;
     private CreateEventTask mCreateEventTask = null;
-    private final static String TAG = LoginActivity.class.toString();
+    private final static String TAG = CasalsListActivity.class.toString();
     class CreateEventTask extends AsyncTask<Void, Void, Boolean> {
         private Form form;
 

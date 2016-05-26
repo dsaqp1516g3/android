@@ -24,7 +24,7 @@ import edu.upc.eetac.dsa.okupainfo.client.entity.UserCollection;
  */
 public class UsersListActivity extends AppCompatActivity {
 
-    private final static String TAG = CasalsListActivity.class.toString();
+    private final static String TAG = UsersListActivity.class.toString();
     private GetUsersTask mGetUsersTask = null;
     private UserCollection userCollection = new UserCollection();
     private UserCollectionAdapter  adapter = null;

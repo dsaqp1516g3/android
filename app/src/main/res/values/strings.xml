@@ -14,4 +14,8 @@
         completions."
     </string>
     <string name="title_activity_casals_list">CasalsListActivity</string>
+    <string name="title_activity_users_list">UsersListActivity</string>
+    <string name="title_activity_events_list">EventsListActivity</string>
+    <string name="title_activity_commentcasals_list">Comments_CasalsListActivity</string>
+    <string name="title_activity_commentevents_list">Comments_EventsListActivity</string>
 </resources>

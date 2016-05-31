@@ -2,8 +2,8 @@ package edu.upc.eetac.dsa.okupainfo;
 
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -14,10 +14,8 @@ import javax.ws.rs.core.Form;
 import edu.upc.eetac.dsa.okupainfo.client.OkupaInfoClient;
 import edu.upc.eetac.dsa.okupainfo.client.OkupaInfoClientException;
 
-/**
- * Created by Guillermo on 21/05/2016.
- */
 public class CasalCreateActivity extends AppCompatActivity {
+
     EditText etSubject = null;
     EditText etContent = null;
     Button btCreate = null;

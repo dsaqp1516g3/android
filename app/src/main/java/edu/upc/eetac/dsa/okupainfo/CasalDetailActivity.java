@@ -1,8 +1,8 @@
 package edu.upc.eetac.dsa.okupainfo;
 
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -12,10 +12,8 @@ import edu.upc.eetac.dsa.okupainfo.client.OkupaInfoClient;
 import edu.upc.eetac.dsa.okupainfo.client.OkupaInfoClientException;
 import edu.upc.eetac.dsa.okupainfo.client.entity.Casal;
 
-/**
- * Created by Guillermo on 21/05/2016.
- */
 public class CasalDetailActivity extends AppCompatActivity {
+
     GetCasalTask mGetCasalTask = null;
     String uri = null;
     String casalid = null;

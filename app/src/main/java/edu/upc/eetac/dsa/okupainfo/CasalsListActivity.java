@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -19,23 +18,18 @@ import edu.upc.eetac.dsa.okupainfo.client.OkupaInfoClientException;
 import edu.upc.eetac.dsa.okupainfo.client.entity.Casal;
 import edu.upc.eetac.dsa.okupainfo.client.entity.CasalCollection;
 
-/**
- * Created by Guillermo on 21/05/2016.
- */
 public class CasalsListActivity extends AppCompatActivity {
 
     private final static String TAG = CasalsListActivity.class.toString();
     private GetCasalsTask mGetCasalsTask = null;
     private CasalCollection casals = new CasalCollection();
-    private CasalCollectionAdapter  adapter = null;
+    private CasalCollectionAdapter adapter = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_casals_list);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         // Execute AsyncTask
         mGetCasalsTask = new GetCasalsTask(null);
@@ -43,7 +37,7 @@ public class CasalsListActivity extends AppCompatActivity {
 
         // set list adapter
         ListView list = (ListView)findViewById(R.id.listcasals);
-        CasalCollectionAdapter  adapter = new CasalCollectionAdapter(this, casals);
+        CasalCollectionAdapter adapter = new CasalCollectionAdapter(this, casals);
         list.setAdapter(adapter);
 
         // set list OnItemClick listener
@@ -91,7 +85,7 @@ public class CasalsListActivity extends AppCompatActivity {
             Log.d(TAG, jsonCasalCollection);
             CasalCollection casalCollection = (new Gson()).fromJson(jsonCasalCollection, CasalCollection.class);
             for(Casal casal : casalCollection.getCasals()){
-                casals.getCasals().add(casals.getCasals().size(), casal);
+                casalCollection.getCasals().add(casalCollection.getCasals().size(), casal);
             }
             adapter.notifyDataSetChanged();
         }

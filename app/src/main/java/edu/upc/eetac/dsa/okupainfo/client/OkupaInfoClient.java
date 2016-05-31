@@ -26,7 +26,7 @@ import edu.upc.eetac.dsa.okupainfo.client.entity.Root;
  * Created by Guillermo on 21/05/2016.
  */
 public class OkupaInfoClient {
-    private final static String BASE_URI = "http://192.168.1.12:8080/okupainfo";
+    private final static String BASE_URI = "http://10.0.2.2:8080/okupainfo";
     private static OkupaInfoClient instance;
     private AuthToken authToken = null;
     private Casal casal = null;
@@ -68,12 +68,14 @@ public class OkupaInfoClient {
         return null;
     }
 
-    public boolean login(String userid, String password) {
+    public boolean login(String loginid, String password) {
         String loginUri = getLink(root.getLinks(), "login").getUri().toString();
+        System.out.println(loginUri);
         WebTarget target = client.target(loginUri);
         Form form = new Form();
-        form.param("login", "spongebob");
-        form.param("password", "1234");
+        form.param("loginid", loginid);
+        form.param("password", password);
+        System.out.println(loginid+"   "+password);
         String json = target.request().post(Entity.entity(form, MediaType.APPLICATION_FORM_URLENCODED_TYPE), String.class);
         authToken = (new Gson()).fromJson(json, AuthToken.class);
         Log.d(TAG, json);

@@ -24,51 +24,38 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="edu.upc.eetac.dsa.okupainfo.UsersListActivity"
-            android:label="@string/title_activity_casals_list"
-            android:theme="@style/AppTheme.PopupOverlay" >
-        </activity>
-        <activity android:name="edu.upc.eetac.dsa.okupainfo.UserDetailActivity" >
-        </activity>
-        <activity android:name="edu.upc.eetac.dsa.okupainfo.UserCreateActivity" >
-        </activity>
+            android:name=".UsersListActivity"
+            android:label="@string/title_activity_users_list"
+            android:theme="@style/AppTheme.PopupOverlay" />
+        <activity android:name=".UserDetailActivity" />
+        <activity android:name=".UserCreateActivity" />
         <activity
-            android:name="edu.upc.eetac.dsa.okupainfo.CasalsListActivity"
-            android:label="@string/title_activity_casals_list"
-            android:theme="@style/AppTheme.PopupOverlay" >
-        </activity>
-        <activity android:name="edu.upc.eetac.dsa.okupainfo.CasalCreateActivity" >
-        </activity>
-        <activity android:name="edu.upc.eetac.dsa.okupainfo.CasalDetailActivity" >
-        </activity>
-        <activity
-            android:name="edu.upc.eetac.dsa.okupainfo.EventsListActivity"
+            android:name=".EventsListActivity"
             android:label="@string/title_activity_events_list"
-            android:theme="@style/AppTheme.PopupOverlay" >
-        </activity>
-        <activity android:name="edu.upc.eetac.dsa.okupainfo.EventDetailActivity" >
-        </activity>
-        <activity android:name="edu.upc.eetac.dsa.okupainfo.EventCreateActivity" >
-        </activity>
+            android:theme="@style/AppTheme.PopupOverlay" />
+        <activity android:name=".EventDetailActivity" />
+        <activity android:name=".EventCreateActivity" />
         <activity
-            android:name="edu.upc.eetac.dsa.okupainfo.Comments_EventsListActivity"
+            android:name=".Comments_EventsListActivity"
             android:label="@string/title_activity_commentevents_list"
-            android:theme="@style/AppTheme.PopupOverlay" >
-        </activity>
-        <activity android:name="edu.upc.eetac.dsa.okupainfo.Comments_EventsDetailActivity" >
-        </activity>
-        <activity android:name="edu.upc.eetac.dsa.okupainfo.Comments_EventsCreateActivity" >
-        </activity>
+            android:theme="@style/AppTheme.PopupOverlay" />
+        <activity android:name=".Comments_EventsDetailActivity" />
+        <activity android:name=".Comments_EventsCreateActivity" />
         <activity
-            android:name="edu.upc.eetac.dsa.okupainfo.Comments_CasalsListActivity"
+            android:name=".Comments_CasalsListActivity"
             android:label="@string/title_activity_commentcasals_list"
-            android:theme="@style/AppTheme.PopupOverlay" >
-        </activity>
-        <activity android:name="edu.upc.eetac.dsa.okupainfo.Comments_CasalsDetailActivity" >
-        </activity>
-        <activity android:name="edu.upc.eetac.dsa.okupainfo.Comments_CasalsCreateActivity" >
-        </activity>
+            android:theme="@style/AppTheme.PopupOverlay" />
+        <activity android:name=".Comments_CasalsDetailActivity" />
+        <activity android:name=".Comments_CasalsCreateActivity" />
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".CasalsListActivity"
+            android:label="@string/title_activity_casals_list"
+            android:theme="@style/AppTheme.PopupOverlay" />
+        <activity android:name=".CasalDetailActivity" />
+        <activity android:name=".CasalCreateActivity" >
 
+        </activity>
     </application>
 
 </manifest>

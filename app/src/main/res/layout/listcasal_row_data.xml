@@ -5,7 +5,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/textViewAdminid"
+        android:id="@+id/textViewAdminidCasal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="start" />
@@ -16,14 +16,14 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/textViewName"
+            android:id="@+id/textViewNameCasal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:gravity="start" />
 
         <TextView
-            android:id="@+id/textViewDescription"
+            android:id="@+id/textViewDescriptionCasal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"

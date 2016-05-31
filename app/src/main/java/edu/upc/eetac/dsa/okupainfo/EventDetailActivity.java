@@ -1,8 +1,8 @@
 package edu.upc.eetac.dsa.okupainfo;
 
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -12,10 +12,8 @@ import edu.upc.eetac.dsa.okupainfo.client.OkupaInfoClient;
 import edu.upc.eetac.dsa.okupainfo.client.OkupaInfoClientException;
 import edu.upc.eetac.dsa.okupainfo.client.entity.Event;
 
-/**
- * Created by Guillermo on 24/05/2016.
- */
 public class EventDetailActivity extends AppCompatActivity {
+
     GetEventTask mGetEventTask = null;
     String uri = null;
     String casalid = null;
@@ -78,4 +76,3 @@ public class EventDetailActivity extends AppCompatActivity {
 
     }
 }
-

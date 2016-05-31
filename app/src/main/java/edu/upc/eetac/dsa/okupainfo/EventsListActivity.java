@@ -2,10 +2,10 @@ package edu.upc.eetac.dsa.okupainfo;
 
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,20 +13,18 @@ import android.widget.ListView;
 
 import com.google.gson.Gson;
 
+import edu.upc.eetac.dsa.okupainfo.client.EventCollectionAdapter;
 import edu.upc.eetac.dsa.okupainfo.client.OkupaInfoClient;
 import edu.upc.eetac.dsa.okupainfo.client.OkupaInfoClientException;
 import edu.upc.eetac.dsa.okupainfo.client.entity.Event;
 import edu.upc.eetac.dsa.okupainfo.client.entity.EventCollection;
 
-/**
- * Created by Guillermo on 24/05/2016.
- */
 public class EventsListActivity extends AppCompatActivity {
 
     private final static String TAG = EventsListActivity.class.toString();
     private GetEventsTask mGetEventsTask = null;
     private EventCollection events = new EventCollection();
-    private EventCollectionAdapter  adapter = null;
+    private EventCollectionAdapter adapter = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

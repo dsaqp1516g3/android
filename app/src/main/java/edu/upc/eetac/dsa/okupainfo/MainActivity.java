@@ -17,8 +17,9 @@ public class MainActivity extends AppCompatActivity {
         mCasalButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                startActivity(new Intent(MainActivity.this, CasalsListActivity.class));
+                Intent intent= new Intent(MainActivity.this, CasalsListActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
@@ -27,19 +28,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(MainActivity.this, EventsListActivity.class));
-            }
-        });
-
-        Button mUsersButton = (Button) findViewById(R.id.Users);
-        mCasalButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                startActivity(new Intent(MainActivity.this, UsersListActivity.class));
+                Intent intent= new Intent(MainActivity.this, EventsListActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
-
-
 }

@@ -203,7 +203,7 @@ public class LoginActivity extends AppCompatActivity  {
             showProgress(false);
 
             if (result) {
-                Intent intent= new Intent(LoginActivity.this, CasalsListActivity.class);
+                Intent intent= new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
             } else {

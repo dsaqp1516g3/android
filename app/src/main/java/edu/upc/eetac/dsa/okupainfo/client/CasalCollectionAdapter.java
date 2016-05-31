@@ -1,4 +1,4 @@
-package edu.upc.eetac.dsa.okupainfo;
+package edu.upc.eetac.dsa.okupainfo.client;
 
 import android.content.Context;
 import android.database.DataSetObserver;
@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
+import edu.upc.eetac.dsa.okupainfo.R;
 import edu.upc.eetac.dsa.okupainfo.client.entity.CasalCollection;
 
 public class CasalCollectionAdapter extends AppCompatActivity implements ListAdapter {

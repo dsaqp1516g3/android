@@ -13,6 +13,7 @@ import android.widget.ListView;
 
 import com.google.gson.Gson;
 
+import edu.upc.eetac.dsa.okupainfo.client.CasalCollectionAdapter;
 import edu.upc.eetac.dsa.okupainfo.client.OkupaInfoClient;
 import edu.upc.eetac.dsa.okupainfo.client.OkupaInfoClientException;
 import edu.upc.eetac.dsa.okupainfo.client.entity.Casal;
@@ -61,11 +62,11 @@ public class CasalsListActivity extends AppCompatActivity {
     }
 
     class GetCasalsTask extends AsyncTask<Void, Void, String> {
+
         private String uri;
 
         public GetCasalsTask(String uri) {
             this.uri = uri;
-
         }
 
         @Override

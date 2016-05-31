@@ -1,4 +1,4 @@
-package edu.upc.eetac.dsa.okupainfo;
+package edu.upc.eetac.dsa.okupainfo.client;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import edu.upc.eetac.dsa.okupainfo.R;
 import edu.upc.eetac.dsa.okupainfo.client.entity.EventCollection;
 
 /**

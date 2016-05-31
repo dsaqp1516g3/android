@@ -30,12 +30,6 @@
         <activity android:name=".UserDetailActivity" />
         <activity android:name=".UserCreateActivity" />
         <activity
-            android:name=".EventsListActivity"
-            android:label="@string/title_activity_events_list"
-            android:theme="@style/AppTheme.PopupOverlay" />
-        <activity android:name=".EventDetailActivity" />
-        <activity android:name=".EventCreateActivity" />
-        <activity
             android:name=".Comments_EventsListActivity"
             android:label="@string/title_activity_commentevents_list"
             android:theme="@style/AppTheme.PopupOverlay" />
@@ -53,9 +47,13 @@
             android:label="@string/title_activity_casals_list"
             android:theme="@style/AppTheme.PopupOverlay" />
         <activity android:name=".CasalDetailActivity" />
-        <activity android:name=".CasalCreateActivity" >
-
-        </activity>
+        <activity android:name=".CasalCreateActivity" />
+        <activity
+            android:name=".EventsListActivity"
+            android:label="@string/title_activity_events_list"
+            android:theme="@style/AppTheme.PopupOverlay" />
+        <activity android:name=".EventDetailActivity" />
+        <activity android:name=".EventCreateActivity"></activity>
     </application>
 
 </manifest>

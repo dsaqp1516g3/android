@@ -11,10 +11,10 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Name" />
+        android:text="Nombre" />
 
     <EditText
-        android:id="@+id/Name"
+        android:id="@+id/CreateCasalName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text" />
@@ -22,16 +22,38 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Description" />
+        android:text="Email:" />
 
     <EditText
-        android:id="@+id/Description"
+        android:id="@+id/CreateCasalEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Descripción:" />
+
+    <EditText
+        android:id="@+id/CreateCasalDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Localización:" />
+
+    <EditText
+        android:id="@+id/CreateCasalLocalization"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text" />
 
     <Button
-        android:id="@+id/Create"
+        android:id="@+id/CreateCasal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Create Casal" />

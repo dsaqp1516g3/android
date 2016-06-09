@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class CasalCollection {
     private List<Link> links;
-    private List<Casal> Casals = new ArrayList<>();
+    private List<Casal> casals = new ArrayList<>();
 
     public List<Link> getLinks() {
         return links;
@@ -19,10 +19,10 @@ public class CasalCollection {
     }
 
     public List<Casal> getCasals() {
-        return Casals;
+        return casals;
     }
 
     public void setCasals(List<Casal> casals) {
-        Casals = casals;
+        this.casals = casals;
     }
 }

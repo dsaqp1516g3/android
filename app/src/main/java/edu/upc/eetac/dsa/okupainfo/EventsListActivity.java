@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,7 +14,6 @@ import android.widget.ListView;
 
 import com.google.gson.Gson;
 
-import edu.upc.eetac.dsa.okupainfo.client.EventCollectionAdapter;
 import edu.upc.eetac.dsa.okupainfo.client.OkupaInfoClient;
 import edu.upc.eetac.dsa.okupainfo.client.OkupaInfoClientException;
 import edu.upc.eetac.dsa.okupainfo.client.entity.Event;
@@ -29,21 +29,23 @@ public class EventsListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_events_list);
 
+        Toolbar toolbarevents = (Toolbar) findViewById(R.id.toolbarevents);
+        setSupportActionBar(toolbarevents);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // Execute AsyncTask
         mGetEventsTask = new GetEventsTask(null);
         mGetEventsTask.execute((Void) null);
 
         // set list adapter
-        ListView list = (ListView)findViewById(R.id.listevents);
-        EventCollectionAdapter  adapter = new EventCollectionAdapter(this, events);
-        list.setAdapter(adapter);
+        ListView listaevents = (ListView)findViewById(R.id.listaevents);
+        adapter = new EventCollectionAdapter(this, events);
+        listaevents.setAdapter(adapter);
 
         // set list OnItemClick listener
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listaevents.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(EventsListActivity.this, EventDetailActivity.class);
@@ -52,11 +54,11 @@ public class EventsListActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton fabevents = (FloatingActionButton) findViewById(R.id.fabevents);
+        fabevents.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Selecciona cualquiera de estos eventos para verlos en detalle", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });

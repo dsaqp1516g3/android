@@ -192,7 +192,7 @@ public class LoginActivity extends AppCompatActivity  {
 
             OkupaInfoClient client = OkupaInfoClient.getInstance();
             boolean result = false;
-            result = client.login(mLoginid, mPassword);
+                result = client.login(mLoginid, mPassword);
             // TODO: register the new account here.
             return result;
         }

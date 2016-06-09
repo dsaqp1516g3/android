@@ -19,6 +19,7 @@ import javax.ws.rs.core.Response;
 
 import edu.upc.eetac.dsa.okupainfo.client.entity.AuthToken;
 import edu.upc.eetac.dsa.okupainfo.client.entity.Casal;
+import edu.upc.eetac.dsa.okupainfo.client.entity.Event;
 import edu.upc.eetac.dsa.okupainfo.client.entity.Link;
 import edu.upc.eetac.dsa.okupainfo.client.entity.Root;
 
@@ -29,7 +30,8 @@ public class OkupaInfoClient {
     private final static String BASE_URI = "http://10.0.2.2:8080/okupainfo";
     private static OkupaInfoClient instance;
     private AuthToken authToken = null;
-    private Casal casal = null;
+    private Casal casals = null;
+    private Event events = null;
     private Root root;
     private ClientConfig clientConfig = null;
     private final static String TAG = OkupaInfoClient.class.toString();
@@ -73,8 +75,10 @@ public class OkupaInfoClient {
         System.out.println(loginUri);
         WebTarget target = client.target(loginUri);
         Form form = new Form();
-        form.param("loginid", loginid);
-        form.param("password", password);
+        //form.param("loginid", loginid);
+        form.param("loginid","guillermo");
+        //form.param("password", password);
+        form.param("password", "1234");
         System.out.println(loginid+"   "+password);
         String json = target.request().post(Entity.entity(form, MediaType.APPLICATION_FORM_URLENCODED_TYPE), String.class);
         authToken = (new Gson()).fromJson(json, AuthToken.class);
@@ -93,7 +97,7 @@ public class OkupaInfoClient {
 
     public String getCasals(String uri) throws OkupaInfoClientException {
         if(uri==null){
-            uri = getLink(authToken.getLinks(), "current-casals").getUri().toString();
+            uri = getLink(root.getLinks(), "current-casals").getUri().toString();
         }
         WebTarget target = client.target(uri);
         Response response = target.request().get();
@@ -129,7 +133,7 @@ public class OkupaInfoClient {
 
     public String getEvents(String uri) throws OkupaInfoClientException {
         if(uri==null){
-            uri = getLink(authToken.getLinks(), "current-events").getUri().toString();
+            uri = getLink(root.getLinks(), "current-events").getUri().toString();
         }
         WebTarget target = client.target(uri);
         Response response = target.request().get();

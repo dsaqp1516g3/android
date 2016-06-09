@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Button mCasalButton = (Button) findViewById(R.id.Casals);
         mCasalButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Button mEventButton = (Button) findViewById(R.id.Events);
-        mCasalButton.setOnClickListener(new View.OnClickListener() {
+        mEventButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

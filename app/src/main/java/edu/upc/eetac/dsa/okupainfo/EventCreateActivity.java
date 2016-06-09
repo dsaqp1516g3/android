@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.Date;
+
 import javax.ws.rs.core.Form;
 
 import edu.upc.eetac.dsa.okupainfo.client.OkupaInfoClient;
@@ -18,6 +20,8 @@ public class EventCreateActivity extends AppCompatActivity {
 
     EditText etTitle = null;
     EditText etDescription = null;
+    EditText etLocalization = null;
+    EditText etEventdate = null;
     Button btCreate = null;
     private CreateEventTask mCreateEventTask = null;
     private final static String TAG = CasalsListActivity.class.toString();
@@ -67,22 +71,28 @@ public class EventCreateActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_create);
-        etTitle = (EditText)findViewById(R.id.Title);
-        etDescription = (EditText)findViewById(R.id.Description);
-        btCreate = (Button)findViewById(R.id.Create);
+        etTitle = (EditText)findViewById(R.id.CreateEventTitle);
+        etDescription = (EditText)findViewById(R.id.CreateEventDescription);
+        etLocalization = (EditText)findViewById(R.id.CreateEventLocalization);
+        etEventdate = (EditText)findViewById(R.id.CreateEventEventdate);
+        btCreate = (Button)findViewById(R.id.CreateEvent);
 
         btCreate.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
 
-                if(etTitle.getText().length()!=0 && etDescription.getText().length()!=0)
+                if(etTitle.getText().length()!=0 && etLocalization.getText().length()!=0 && etEventdate.getText().length()!=0 && etDescription.getText().length()!=0)
                 {
                     String title = etTitle.getText().toString();
                     String description = etDescription.getText().toString();
+                    String localization = etLocalization.getText().toString();
+                    String eventdate = etEventdate.getText().toString();
                     Form form = new Form();
                     form.param("title", title);
                     form.param("description", description);
+                    form.param("localization", localization);
+                    form.param("eventdate", eventdate);
 
                     // Execute AsyncTask
                     mCreateEventTask = new CreateEventTask(form);

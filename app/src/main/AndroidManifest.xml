@@ -44,14 +44,19 @@
         <activity android:name=".MainActivity" />
         <activity
             android:name=".CasalsListActivity"
+            android:parentActivityName=".MainActivity"
             android:label="@string/title_activity_casals_list"
-            android:theme="@style/AppTheme.PopupOverlay" />
+            android:theme="@style/AppTheme.NoActionBar" />
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MainActivity" />
         <activity android:name=".CasalDetailActivity" />
         <activity android:name=".CasalCreateActivity" />
         <activity
             android:name=".EventsListActivity"
+            android:parentActivityName=".MainActivity"
             android:label="@string/title_activity_events_list"
-            android:theme="@style/AppTheme.PopupOverlay" />
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".EventDetailActivity" />
         <activity android:name=".EventCreateActivity"></activity>
     </application>

@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class UserCollection {
     private List<Link> links;
-    private List<User> Users = new ArrayList<>();
+    private List<User> users = new ArrayList<>();
 
     public List<Link> getLinks() {
         return links;
@@ -19,10 +19,10 @@ public class UserCollection {
     }
 
     public List<User> getUsers() {
-        return Users;
+        return users;
     }
 
     public void setUsers(List<User> users) {
-        Users = users;
+        this.users = users;
     }
 }

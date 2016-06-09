@@ -1,4 +1,4 @@
-package edu.upc.eetac.dsa.okupainfo.client;
+package edu.upc.eetac.dsa.okupainfo;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import edu.upc.eetac.dsa.okupainfo.R;
 import edu.upc.eetac.dsa.okupainfo.client.entity.EventCollection;
 
 /**
@@ -24,17 +23,17 @@ public class EventCollectionAdapter extends BaseAdapter {
     }
 
     class ViewHolder{
-        TextView textViewCasalid;
+        TextView textViewEventdate;
         TextView textViewTitle;
         TextView textViewDescription;
 
         ViewHolder(View row){
-            this.textViewCasalid = (TextView) row
-                    .findViewById(R.id.textViewCasalid);
+            this.textViewEventdate = (TextView) row
+                    .findViewById(R.id.textViewEventdateEvent);
             this.textViewTitle = (TextView) row
-                    .findViewById(R.id.textViewTitle);
+                    .findViewById(R.id.textViewTitleEvent);
             this.textViewDescription = (TextView) row
-                    .findViewById(R.id.textViewDescription);
+                    .findViewById(R.id.textViewDescriptionEvent);
         }
     }
 
@@ -64,12 +63,12 @@ public class EventCollectionAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
-        String casalid = eventCollection.getEvents().get(position).getCasalid();
+        Long date = eventCollection.getEvents().get(position).getEventdate();
         String title = eventCollection.getEvents().get(position).getTitle();
         String description = eventCollection.getEvents().get(position).getDescription();
+        String eventdate = String.valueOf(date);
 
-
-        viewHolder.textViewCasalid.setText(casalid);
+        viewHolder.textViewEventdate.setText(eventdate);
         viewHolder.textViewTitle.setText(title);
         viewHolder.textViewDescription.setText(description);
         return convertView;

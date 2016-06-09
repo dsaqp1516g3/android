@@ -1,4 +1,4 @@
-package edu.upc.eetac.dsa.okupainfo.client;
+package edu.upc.eetac.dsa.okupainfo;
 
 import android.content.Context;
 import android.database.DataSetObserver;
@@ -9,9 +9,11 @@ import android.view.ViewGroup;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
-import edu.upc.eetac.dsa.okupainfo.R;
 import edu.upc.eetac.dsa.okupainfo.client.entity.CasalCollection;
 
+/**
+ * Created by Guillermo on 09/06/2016.
+ */
 public class CasalCollectionAdapter extends AppCompatActivity implements ListAdapter {
 
     private CasalCollection casalCollection;
@@ -20,6 +22,17 @@ public class CasalCollectionAdapter extends AppCompatActivity implements ListAda
     public CasalCollectionAdapter(Context context, CasalCollection casalCollection){
         layoutInflater = LayoutInflater.from(context);
         this.casalCollection = casalCollection;
+    }
+    class ViewHolder{
+        TextView textViewName;
+        TextView textViewEmail;
+
+        ViewHolder(View row){
+            this.textViewName = (TextView) row
+                    .findViewById(R.id.textViewNameCasal);
+            this.textViewEmail = (TextView) row
+                    .findViewById(R.id.textViewEmailCasal);
+        }
     }
 
     @Override
@@ -33,21 +46,6 @@ public class CasalCollectionAdapter extends AppCompatActivity implements ListAda
     }
 
     public void notifyDataSetChanged() {
-    }
-
-    class ViewHolder{
-        TextView textViewAminid;
-        TextView textViewName;
-        TextView textViewDescription;
-
-        ViewHolder(View row){
-            this.textViewAminid = (TextView) row
-                    .findViewById(R.id.textViewAdminid);
-            this.textViewName = (TextView) row
-                    .findViewById(R.id.textViewName);
-            this.textViewDescription = (TextView) row
-                    .findViewById(R.id.textViewDescription);
-        }
     }
 
     @Override
@@ -91,14 +89,11 @@ public class CasalCollectionAdapter extends AppCompatActivity implements ListAda
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
-        String adminid = casalCollection.getCasals().get(position).getAdminid();
         String name = casalCollection.getCasals().get(position).getName();
-        String description = casalCollection.getCasals().get(position).getDescription();
+        String email = casalCollection.getCasals().get(position).getEmail();
 
-
-        viewHolder.textViewAminid.setText(adminid);
         viewHolder.textViewName.setText(name);
-        viewHolder.textViewDescription.setText(description);
+        viewHolder.textViewEmail.setText(email);
         return convertView;
     }
 
@@ -117,3 +112,4 @@ public class CasalCollectionAdapter extends AppCompatActivity implements ListAda
         return false;
     }
 }
+

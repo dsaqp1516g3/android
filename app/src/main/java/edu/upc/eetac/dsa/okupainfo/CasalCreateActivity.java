@@ -16,8 +16,10 @@ import edu.upc.eetac.dsa.okupainfo.client.OkupaInfoClientException;
 
 public class CasalCreateActivity extends AppCompatActivity {
 
-    EditText etSubject = null;
-    EditText etContent = null;
+    EditText etName = null;
+    EditText etEmail = null;
+    EditText etDescription = null;
+    EditText etLocalization = null;
     Button btCreate = null;
     private CreateCasalTask mCreateCasalTask = null;
     private final static String TAG = UsersListActivity.class.toString();
@@ -67,22 +69,28 @@ public class CasalCreateActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_casal_create);
-        etSubject = (EditText)findViewById(R.id.Name);
-        etContent = (EditText)findViewById(R.id.Description);
-        btCreate = (Button)findViewById(R.id.Create);
+        etName = (EditText)findViewById(R.id.CreateCasalName);
+        etEmail = (EditText)findViewById(R.id.CreateCasalEmail);
+        etDescription = (EditText)findViewById(R.id.CreateCasalDescription);
+        etLocalization = (EditText)findViewById(R.id.CreateCasalLocalization);
+        btCreate = (Button)findViewById(R.id.CreateCasal);
 
         btCreate.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
 
-                if(etSubject.getText().length()!=0 && etContent.getText().length()!=0)
+                if(etName.getText().length()!=0 && etEmail.getText().length()!=0 && etDescription.getText().length()!=0 && etLocalization.getText().length()!=0)
                 {
-                    String subject = etSubject.getText().toString();
-                    String content = etContent.getText().toString();
+                    String name = etName.getText().toString();
+                    String email = etEmail.getText().toString();
+                    String description = etDescription.getText().toString();
+                    String localization = etLocalization.getText().toString();
                     Form form = new Form();
-                    form.param("subject", subject);
-                    form.param("content", content);
+                    form.param("name", name);
+                    form.param("email", email);
+                    form.param("description", description);
+                    form.param("localization", localization);
 
                     // Execute AsyncTask
                     mCreateCasalTask = new CreateCasalTask(form);

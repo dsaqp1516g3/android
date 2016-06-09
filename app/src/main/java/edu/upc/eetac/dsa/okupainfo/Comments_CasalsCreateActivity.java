@@ -2,8 +2,8 @@ package edu.upc.eetac.dsa.okupainfo;
 
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -14,14 +14,11 @@ import javax.ws.rs.core.Form;
 import edu.upc.eetac.dsa.okupainfo.client.OkupaInfoClient;
 import edu.upc.eetac.dsa.okupainfo.client.OkupaInfoClientException;
 
-/**
- * Created by Guillermo on 24/05/2016.
- */
 public class Comments_CasalsCreateActivity extends AppCompatActivity {
     EditText etContent = null;
     Button btCreate = null;
     private CreateCommentCasalTask mCreateCommentCasalTask = null;
-    private final static String TAG = CasalsListActivity.class.toString();
+    private final static String TAG = Comments_CasalsCreateActivity.class.toString();
     class CreateCommentCasalTask extends AsyncTask<Void, Void, Boolean> {
         private Form form;
 
@@ -67,9 +64,9 @@ public class Comments_CasalsCreateActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_commentcasal_create);
-        etContent = (EditText)findViewById(R.id.Content);
-        btCreate = (Button)findViewById(R.id.Create);
+        setContentView(R.layout.activity_comments_casals_create);
+        etContent = (EditText)findViewById(R.id.ContentCommentsCasalsCreate);
+        btCreate = (Button)findViewById(R.id.CreateCommentsCasals);
 
         btCreate.setOnClickListener(new View.OnClickListener() {
 
@@ -98,3 +95,4 @@ public class Comments_CasalsCreateActivity extends AppCompatActivity {
     }
 
 }
+

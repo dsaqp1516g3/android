@@ -29,11 +29,11 @@ public class UserCollectionAdapter extends BaseAdapter {
 
         ViewHolder(View row){
             this.textViewLoginid = (TextView) row
-                    .findViewById(R.id.textViewLoginid);
+                    .findViewById(R.id.textViewLoginidUser);
             this.textViewEmail = (TextView) row
-                    .findViewById(R.id.textViewEmail);
+                    .findViewById(R.id.textViewEmailUser);
             this.textViewFullname = (TextView) row
-                    .findViewById(R.id.textViewFullname);
+                    .findViewById(R.id.textViewFullnameUser);
         }
     }
 

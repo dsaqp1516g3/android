@@ -9,17 +9,46 @@
     tools:context=".EventDetailActivity">
 
     <TextView
-        android:id="@+id/textViewCasalid"
+        android:id="@+id/textViewCasalidDetailCasal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <TextView
-        android:id="@+id/textViewTitle"
+        android:id="@+id/textViewTitleDetailCasal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <TextView
-        android:id="@+id/textViewDescriptionEvent"
+        android:id="@+id/textViewDescriptionDetailCasal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/textViewLocalizationDetailCasal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/textViewLatitudeDetailCasal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/textViewLongitudeDetailCasal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/textViewEventdateDetailCasal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/textViewCreationTimestampDetailCasal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/textViewLastModifiedDetailCasal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

@@ -10,7 +10,7 @@ public class Comments_EventsCollection {
     private List<Link> links;
     private long newestTimestamp;
     private long oldestTimestamp;
-    private List<Comments_Events> comments_events = new ArrayList<>();
+    private List<Comments_Events> comments_eventsCollection = new ArrayList<>();
 
     public List<Link> getLinks() {
         return links;
@@ -36,11 +36,11 @@ public class Comments_EventsCollection {
         this.oldestTimestamp = oldestTimestamp;
     }
 
-    public List<Comments_Events> getComments_events() {
-        return comments_events;
+    public List<Comments_Events> getComments_eventsCollection() {
+        return comments_eventsCollection;
     }
 
-    public void setComments_events(List<Comments_Events> comments_events) {
-        this.comments_events = comments_events;
+    public void setComments_eventsCollection(List<Comments_Events> comments_eventsCollection) {
+        this.comments_eventsCollection = comments_eventsCollection;
     }
 }

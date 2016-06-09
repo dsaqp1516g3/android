@@ -9,21 +9,21 @@
     tools:context="edu.upc.eetac.dsa.okupainfo.UserDetailActivity">
 
     <TextView
-        android:id="@+id/textViewLoginid"
+        android:id="@+id/textViewLoginidDetailUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <TextView
-        android:id="@+id/textViewEmail"
+        android:id="@+id/textViewEmailDetailUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <TextView
-        android:id="@+id/textViewFullname"
+        android:id="@+id/textViewFullnameDetailUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <TextView
-        android:id="@+id/textViewDescription"
+        android:id="@+id/textViewDescriptionDetailUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

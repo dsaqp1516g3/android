@@ -1,8 +1,8 @@
 package edu.upc.eetac.dsa.okupainfo;
 
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -76,5 +76,6 @@ public class CasalDetailActivity extends AppCompatActivity {
 
     }
 }
+
 
 

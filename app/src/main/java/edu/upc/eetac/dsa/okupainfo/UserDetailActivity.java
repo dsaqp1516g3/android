@@ -1,8 +1,8 @@
 package edu.upc.eetac.dsa.okupainfo;
 
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -12,9 +12,6 @@ import edu.upc.eetac.dsa.okupainfo.client.OkupaInfoClient;
 import edu.upc.eetac.dsa.okupainfo.client.OkupaInfoClientException;
 import edu.upc.eetac.dsa.okupainfo.client.entity.User;
 
-/**
- * Created by Guillermo on 24/05/2016.
- */
 public class UserDetailActivity extends AppCompatActivity {
     GetUserTask mGetUserTask = null;
     String uri = null;
@@ -71,10 +68,10 @@ public class UserDetailActivity extends AppCompatActivity {
 
         uri = (String) getIntent().getExtras().get("uri");
 
-        textViewLoginid = (TextView) findViewById(R.id.textViewLoginid);
-        textViewEmail = (TextView) findViewById(R.id.textViewEmail);
-        textViewFullname = (TextView) findViewById(R.id.textViewFullname);
-        textViewDescription = (TextView) findViewById(R.id.textViewDescription);
+        textViewLoginid = (TextView) findViewById(R.id.textViewLoginidDetailUser);
+        textViewEmail = (TextView) findViewById(R.id.textViewEmailDetailUser);
+        textViewFullname = (TextView) findViewById(R.id.textViewFullnameDetailUser);
+        textViewDescription = (TextView) findViewById(R.id.textViewDescriptionDetailUser);
 
         // Execute AsyncTask
         mGetUserTask = new GetUserTask(uri);

@@ -33,8 +33,6 @@ public class EventsListActivity extends AppCompatActivity {
 
         Toolbar toolbarevents = (Toolbar) findViewById(R.id.toolbarevents);
         setSupportActionBar(toolbarevents);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         // Execute AsyncTask
         mGetEventsTask = new GetEventsTask(null);
         mGetEventsTask.execute((Void) null);

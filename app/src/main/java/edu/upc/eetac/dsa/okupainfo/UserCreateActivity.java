@@ -2,8 +2,8 @@ package edu.upc.eetac.dsa.okupainfo;
 
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -14,9 +14,6 @@ import javax.ws.rs.core.Form;
 import edu.upc.eetac.dsa.okupainfo.client.OkupaInfoClient;
 import edu.upc.eetac.dsa.okupainfo.client.OkupaInfoClientException;
 
-/**
- * Created by Guillermo on 24/05/2016.
- */
 public class UserCreateActivity extends AppCompatActivity {
     EditText etLoginid = null;
     EditText etEmail = null;
@@ -71,11 +68,11 @@ public class UserCreateActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_create);
-        etLoginid = (EditText)findViewById(R.id.Loginid);
-        etEmail = (EditText)findViewById(R.id.Email);
-        etFullname = (EditText)findViewById(R.id.Fullname);
-        etDescription = (EditText)findViewById(R.id.Description);
-        btCreate = (Button)findViewById(R.id.Create);
+        etLoginid = (EditText)findViewById(R.id.LoginidCreateUser);
+        etEmail = (EditText)findViewById(R.id.EmailCreateUser);
+        etFullname = (EditText)findViewById(R.id.FullnameCreateUser);
+        etDescription = (EditText)findViewById(R.id.DescriptionCreateUser);
+        btCreate = (Button)findViewById(R.id.CreateUser);
 
         btCreate.setOnClickListener(new View.OnClickListener() {
 

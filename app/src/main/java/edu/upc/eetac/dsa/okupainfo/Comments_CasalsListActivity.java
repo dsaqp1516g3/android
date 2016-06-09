@@ -2,10 +2,10 @@ package edu.upc.eetac.dsa.okupainfo;
 
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,21 +18,18 @@ import edu.upc.eetac.dsa.okupainfo.client.OkupaInfoClientException;
 import edu.upc.eetac.dsa.okupainfo.client.entity.Comments_Casals;
 import edu.upc.eetac.dsa.okupainfo.client.entity.Comments_CasalsCollection;
 
-/**
- * Created by Guillermo on 24/05/2016.
- */
 public class Comments_CasalsListActivity extends AppCompatActivity {
 
     private final static String TAG = Comments_CasalsListActivity.class.toString();
     private GetCommentCasalTask mGetCommentCasalTask = null;
-    private Comments_CasalsCollection comments_casals = new Comments_CasalsCollection();
+    private Comments_CasalsCollection comments_casalsCollection = new Comments_CasalsCollection();
     private Comments_CasalsCollectionAdapter  adapter = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_commentcasals_list);
+        setContentView(R.layout.activity_comments_casals_list);
 
         // Execute AsyncTask
         mGetCommentCasalTask = new GetCommentCasalTask(null);
@@ -40,7 +37,7 @@ public class Comments_CasalsListActivity extends AppCompatActivity {
 
         // set list adapter
         ListView list = (ListView)findViewById(R.id.listcommentcasals);
-        Comments_CasalsCollectionAdapter  adapter = new Comments_CasalsCollectionAdapter(this, comments_casals);
+        adapter = new Comments_CasalsCollectionAdapter(this, comments_casalsCollection);
         list.setAdapter(adapter);
 
         // set list OnItemClick listener
@@ -48,7 +45,7 @@ public class Comments_CasalsListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(Comments_CasalsListActivity.this, Comments_CasalsDetailActivity.class);
-                String uri = OkupaInfoClient.getLink(comments_casals.getComments_casals().get(position).getLinks(), "self").getUri().toString();
+                String uri = OkupaInfoClient.getLink(comments_casalsCollection.getComments_casalsCollection().get(position).getLinks(), "self").getUri().toString();
                 intent.putExtra("uri", uri);
                 startActivity(intent);
             }
@@ -86,9 +83,9 @@ public class Comments_CasalsListActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String jsonComments_CasalsCollection) {
             Log.d(TAG, jsonComments_CasalsCollection);
-            Comments_CasalsCollection comments_casalsCollection = (new Gson()).fromJson(jsonComments_CasalsCollection, Comments_CasalsCollection.class);
-            for(Comments_Casals comments_casals : comments_casalsCollection.getComments_casals()){
-                comments_casalsCollection.getComments_casals().add(comments_casalsCollection.getComments_casals().size(), comments_casals);
+            Comments_CasalsCollection comments_casalsCol = (new Gson()).fromJson(jsonComments_CasalsCollection, Comments_CasalsCollection.class);
+            for(Comments_Casals comments_casals : comments_casalsCol.getComments_casalsCollection()){
+                comments_casalsCollection.getComments_casalsCollection().add(comments_casalsCollection.getComments_casalsCollection().size(), comments_casals);
             }
             adapter.notifyDataSetChanged();
         }

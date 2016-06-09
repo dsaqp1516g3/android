@@ -2,10 +2,10 @@ package edu.upc.eetac.dsa.okupainfo;
 
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,9 +18,6 @@ import edu.upc.eetac.dsa.okupainfo.client.OkupaInfoClientException;
 import edu.upc.eetac.dsa.okupainfo.client.entity.Comments_Events;
 import edu.upc.eetac.dsa.okupainfo.client.entity.Comments_EventsCollection;
 
-/**
- * Created by Guillermo on 24/05/2016.
- */
 public class Comments_EventsListActivity extends AppCompatActivity {
 
     private final static String TAG = Comments_EventsListActivity.class.toString();
@@ -32,7 +29,7 @@ public class Comments_EventsListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_commentevents_list);
+        setContentView(R.layout.activity_comments_events_list);
 
         // Execute AsyncTask
         mGetCommentEventTask = new GetCommentEventTask(null);
@@ -40,7 +37,7 @@ public class Comments_EventsListActivity extends AppCompatActivity {
 
         // set list adapter
         ListView list = (ListView)findViewById(R.id.listcommentevents);
-        Comments_EventsCollectionAdapter  adapter = new Comments_EventsCollectionAdapter(this, comments_eventsCollection);
+        adapter = new Comments_EventsCollectionAdapter(this, comments_eventsCollection);
         list.setAdapter(adapter);
 
         // set list OnItemClick listener
@@ -48,16 +45,16 @@ public class Comments_EventsListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(Comments_EventsListActivity.this, Comments_EventsDetailActivity.class);
-                String uri = OkupaInfoClient.getLink(comments_eventsCollection.getComments_events().get(position).getLinks(), "self").getUri().toString();
+                String uri = OkupaInfoClient.getLink(comments_eventsCollection.getComments_eventsCollection().get(position).getLinks(), "self").getUri().toString();
                 intent.putExtra("uri", uri);
                 startActivity(intent);
             }
         });
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton fabcommentsevents = (FloatingActionButton) findViewById(R.id.fabcommentsevents);
+        fabcommentsevents.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Selecciona cualquiera de estos eventos para verlos en detalle", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -86,9 +83,9 @@ public class Comments_EventsListActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String jsonCommentEventCollection) {
             Log.d(TAG, jsonCommentEventCollection);
-            Comments_EventsCollection casalCollection = (new Gson()).fromJson(jsonCommentEventCollection, Comments_EventsCollection.class);
-            for(Comments_Events comments_events : comments_eventsCollection.getComments_events()){
-                comments_eventsCollection.getComments_events().add(comments_eventsCollection.getComments_events().size(), comments_events);
+            Comments_EventsCollection comments_eventsCol = (new Gson()).fromJson(jsonCommentEventCollection, Comments_EventsCollection.class);
+            for(Comments_Events comments_events : comments_eventsCol.getComments_eventsCollection()){
+                comments_eventsCollection.getComments_eventsCollection().add(comments_eventsCollection.getComments_eventsCollection().size(), comments_events);
             }
             adapter.notifyDataSetChanged();
         }

@@ -9,17 +9,27 @@
     tools:context="edu.upc.eetac.dsa.okupainfo.Comments_EventsDetailActivity">
 
     <TextView
-        android:id="@+id/textViewCreatorid"
+        android:id="@+id/textViewCreatoridDetailCommentEvent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <TextView
-        android:id="@+id/textViewEventoid"
+        android:id="@+id/textViewEventoidDetailCommentEvent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <TextView
-        android:id="@+id/textViewContent"
+        android:id="@+id/textViewContentDetailCommentEvent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/textViewCreationTimestampDetailCommentEvent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/textViewLastModifiedDetailCommentEvent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

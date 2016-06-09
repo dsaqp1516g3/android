@@ -2,10 +2,10 @@ package edu.upc.eetac.dsa.okupainfo;
 
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,14 +18,11 @@ import edu.upc.eetac.dsa.okupainfo.client.OkupaInfoClientException;
 import edu.upc.eetac.dsa.okupainfo.client.entity.User;
 import edu.upc.eetac.dsa.okupainfo.client.entity.UserCollection;
 
-/**
- * Created by Guillermo on 24/05/2016.
- */
 public class UsersListActivity extends AppCompatActivity {
 
     private final static String TAG = UsersListActivity.class.toString();
     private GetUsersTask mGetUsersTask = null;
-    private UserCollection userCollection = new UserCollection();
+    private UserCollection users = new UserCollection();
     private UserCollectionAdapter  adapter = null;
 
     @Override
@@ -40,7 +37,7 @@ public class UsersListActivity extends AppCompatActivity {
 
         // set list adapter
         ListView list = (ListView)findViewById(R.id.listusers);
-        UserCollectionAdapter  adapter = new UserCollectionAdapter(this, userCollection);
+        adapter = new UserCollectionAdapter(this, users);
         list.setAdapter(adapter);
 
         // set list OnItemClick listener
@@ -48,7 +45,7 @@ public class UsersListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(UsersListActivity.this, UserDetailActivity.class);
-                String uri = OkupaInfoClient.getLink(userCollection.getUsers().get(position).getLinks(), "self").getUri().toString();
+                String uri = OkupaInfoClient.getLink(users.getUsers().get(position).getLinks(), "self").getUri().toString();
                 intent.putExtra("uri", uri);
                 startActivity(intent);
             }
@@ -88,9 +85,10 @@ public class UsersListActivity extends AppCompatActivity {
             Log.d(TAG, jsonUserCollection);
             UserCollection userCollection = (new Gson()).fromJson(jsonUserCollection, UserCollection.class);
             for(User user : userCollection.getUsers()){
-                userCollection.getUsers().add(userCollection.getUsers().size(), user);
+                users.getUsers().add(users.getUsers().size(), user);
             }
             adapter.notifyDataSetChanged();
         }
     }
 }
+

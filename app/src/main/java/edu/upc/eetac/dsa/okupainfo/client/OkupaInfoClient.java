@@ -27,7 +27,8 @@ import edu.upc.eetac.dsa.okupainfo.client.entity.Root;
  * Created by Guillermo on 21/05/2016.
  */
 public class OkupaInfoClient {
-    private final static String BASE_URI = "http://10.0.2.2:8080/okupainfo";
+    //private final static String BASE_URI = "http://10.0.2.2:8080/okupainfo";
+    private final static String BASE_URI = "http://147.83.7.204:8080/okupainfo";
     private static OkupaInfoClient instance;
     private AuthToken authToken = null;
     private Casal casals = null;
@@ -76,8 +77,8 @@ public class OkupaInfoClient {
         WebTarget target = client.target(loginUri);
         Form form = new Form();
         //form.param("loginid", loginid);
-        form.param("loginid","guillermo");
         //form.param("password", password);
+        form.param("loginid", "admin");
         form.param("password", "1234");
         System.out.println(loginid+"   "+password);
         String json = target.request().post(Entity.entity(form, MediaType.APPLICATION_FORM_URLENCODED_TYPE), String.class);
@@ -110,10 +111,9 @@ public class OkupaInfoClient {
     public boolean CreateCasal(Form form) throws OkupaInfoClientException {
 
         String token = authToken.getToken();
-        String uri = getLink(authToken.getLinks(), "create-casal").getUri().toString();
+        String uri = getLink(root.getLinks(), "create-casal").getUri().toString();
         WebTarget target = client.target(uri);
-        Invocation.Builder builder = target.request().header("X-Auth-Token", token);
-        Response response = builder.post(Entity.entity(form, MediaType.APPLICATION_FORM_URLENCODED_TYPE));
+        Response response = target.request().post(Entity.entity(form, MediaType.APPLICATION_FORM_URLENCODED_TYPE));
         if (response.getStatus() == Response.Status.CREATED.getStatusCode())
             return true;
         else
@@ -123,6 +123,7 @@ public class OkupaInfoClient {
     }
 
     public String getEvent(String uri) throws OkupaInfoClientException {
+        //uri = "http://10.0.2.2:8080/okupainfo/events";
         WebTarget target = client.target(uri);
         Response response = target.request().get();
         if (response.getStatus() == Response.Status.OK.getStatusCode())

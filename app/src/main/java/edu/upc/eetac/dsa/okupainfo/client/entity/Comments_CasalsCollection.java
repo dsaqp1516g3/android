@@ -10,7 +10,7 @@ public class Comments_CasalsCollection {
     private List<Link> links;
     private long newestTimestamp;
     private long oldestTimestamp;
-    private List<Comments_Casals> comments_casals = new ArrayList<>();
+    private List<Comments_Casals> comments_casalsCollection = new ArrayList<>();
 
     public List<Link> getLinks() {
         return links;
@@ -36,11 +36,11 @@ public class Comments_CasalsCollection {
         this.oldestTimestamp = oldestTimestamp;
     }
 
-    public List<Comments_Casals> getComments_casals() {
-        return comments_casals;
+    public List<Comments_Casals> getComments_casalsCollection() {
+        return comments_casalsCollection;
     }
 
-    public void setComments_casals(List<Comments_Casals> comments_casals) {
-        this.comments_casals = comments_casals;
+    public void setComments_casalsCollection(List<Comments_Casals> comments_casalsCollection) {
+        this.comments_casalsCollection = comments_casalsCollection;
     }
 }

@@ -18,6 +18,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Llista de events" />
+    <Button
+        android:id="@+id/CrearCasal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crear un casal" />
+    <Button
+        android:id="@+id/CrearEvento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crear un evento" />
 
 
 </LinearLayout>

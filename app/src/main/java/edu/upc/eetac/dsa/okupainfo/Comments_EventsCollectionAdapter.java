@@ -29,22 +29,22 @@ public class Comments_EventsCollectionAdapter extends BaseAdapter {
 
         ViewHolder(View row){
             this.textViewCreatorid = (TextView) row
-                    .findViewById(R.id.textViewCreatorid);
+                    .findViewById(R.id.textViewCreatoridCommentEvent);
             this.textViewEventoid = (TextView) row
-                    .findViewById(R.id.textViewEventoid);
+                    .findViewById(R.id.textViewEventoidCommentEvent);
             this.textViewContent = (TextView) row
-                    .findViewById(R.id.textViewContent);
+                    .findViewById(R.id.textViewContentCommentEvent);
         }
     }
 
     @Override
     public int getCount() {
-        return comments_eventsCollection.getComments_events().size();
+        return comments_eventsCollection.getComments_eventsCollection().size();
     }
 
     @Override
     public Object getItem(int position) {
-        return comments_eventsCollection.getComments_events().get(position);
+        return comments_eventsCollection.getComments_eventsCollection().get(position);
     }
 
     @Override
@@ -63,9 +63,9 @@ public class Comments_EventsCollectionAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
-        String creatorid = comments_eventsCollection.getComments_events().get(position).getCreatorid();
-        String eventoid = comments_eventsCollection.getComments_events().get(position).getEventoid();
-        String content = comments_eventsCollection.getComments_events().get(position).getContent();
+        String creatorid = comments_eventsCollection.getComments_eventsCollection().get(position).getCreatorid();
+        String eventoid = comments_eventsCollection.getComments_eventsCollection().get(position).getEventoid();
+        String content = comments_eventsCollection.getComments_eventsCollection().get(position).getContent();
 
 
         viewHolder.textViewCreatorid.setText(creatorid);

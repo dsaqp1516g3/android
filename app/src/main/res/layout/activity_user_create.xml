@@ -14,29 +14,29 @@
         android:text="Loginid" />
 
     <EditText
-        android:id="@+id/Loginid"
+        android:id="@+id/LoginidCreateUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text" />
 
     <TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Email" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email" />
 
     <EditText
-        android:id="@+id/Email"
+        android:id="@+id/EmailCreateUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text" />
 
     <TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Fullname" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fullname" />
 
     <EditText
-        android:id="@+id/Fullname"
+        android:id="@+id/FullnameCreateUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text" />
@@ -47,13 +47,13 @@
         android:text="Description" />
 
     <EditText
-        android:id="@+id/Description"
+        android:id="@+id/DescriptionCreateUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text" />
 
     <Button
-        android:id="@+id/Create"
+        android:id="@+id/CreateUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Create User" />

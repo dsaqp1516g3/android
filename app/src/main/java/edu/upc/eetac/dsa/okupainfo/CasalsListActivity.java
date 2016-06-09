@@ -34,7 +34,6 @@ public class CasalsListActivity extends AppCompatActivity {
 
         Toolbar toolbarcasals = (Toolbar) findViewById(R.id.toolbarcasals);
         setSupportActionBar(toolbarcasals);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         // Execute AsyncTask
         mGetCasalsTask = new GetCasalsTask(null);
         mGetCasalsTask.execute((Void) null);
@@ -62,6 +61,7 @@ public class CasalsListActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
     }
 
     class GetCasalsTask extends AsyncTask<Void, Void, String> {

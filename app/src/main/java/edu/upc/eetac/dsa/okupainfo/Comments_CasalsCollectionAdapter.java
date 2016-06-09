@@ -29,22 +29,22 @@ public class Comments_CasalsCollectionAdapter extends BaseAdapter {
 
         ViewHolder(View row){
             this.textViewCreatorid = (TextView) row
-                    .findViewById(R.id.textViewCreatorid);
+                    .findViewById(R.id.textViewCreatoridCommentCasal);
             this.textViewCasalid = (TextView) row
-                    .findViewById(R.id.textViewCasalid);
+                    .findViewById(R.id.textViewCasalidCommentCasal);
             this.textViewContent = (TextView) row
-                    .findViewById(R.id.textViewContent);
+                    .findViewById(R.id.textViewContentCommentCasal);
         }
     }
 
     @Override
     public int getCount() {
-        return comments_casalsCollection.getComments_casals().size();
+        return comments_casalsCollection.getComments_casalsCollection().size();
     }
 
     @Override
     public Object getItem(int position) {
-        return comments_casalsCollection.getComments_casals().get(position);
+        return comments_casalsCollection.getComments_casalsCollection().get(position);
     }
 
     @Override
@@ -63,9 +63,9 @@ public class Comments_CasalsCollectionAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
-        String creatorid = comments_casalsCollection.getComments_casals().get(position).getCreatorid();
-        String casalid = comments_casalsCollection.getComments_casals().get(position).getCasalid();
-        String content = comments_casalsCollection.getComments_casals().get(position).getContent();
+        String creatorid = comments_casalsCollection.getComments_casalsCollection().get(position).getCreatorid();
+        String casalid = comments_casalsCollection.getComments_casalsCollection().get(position).getCasalid();
+        String content = comments_casalsCollection.getComments_casalsCollection().get(position).getContent();
 
 
         viewHolder.textViewCreatorid.setText(creatorid);

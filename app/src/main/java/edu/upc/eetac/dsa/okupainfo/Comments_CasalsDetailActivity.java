@@ -1,8 +1,8 @@
 package edu.upc.eetac.dsa.okupainfo;
 
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -12,19 +12,20 @@ import edu.upc.eetac.dsa.okupainfo.client.OkupaInfoClient;
 import edu.upc.eetac.dsa.okupainfo.client.OkupaInfoClientException;
 import edu.upc.eetac.dsa.okupainfo.client.entity.Comments_Casals;
 
-/**
- * Created by Guillermo on 24/05/2016.
- */
 public class Comments_CasalsDetailActivity extends AppCompatActivity {
     GetCommentCasalTask mGetCommentCasalTask = null;
     String uri = null;
     String casalid = null;
     String creatorid = null;
     String content = null;
+    Long creationtimestamp = null;
+    Long lastmodified = null;
     private final static String TAG = Comments_CasalsDetailActivity.class.toString();
     TextView textViewCreatorid = null;
     TextView textViewCasalid = null;
     TextView textViewContent = null;
+    TextView textViewCreationTimestamp = null;
+    TextView textViewLastModified = null;
 
     class GetCommentCasalTask extends AsyncTask<Void, Void, String> {
         private String uri;
@@ -53,10 +54,17 @@ public class Comments_CasalsDetailActivity extends AppCompatActivity {
             creatorid = comments_casals.getCreatorid();
             casalid = comments_casals.getCasalid();
             content = comments_casals.getContent();
+            creationtimestamp = comments_casals.getCreationTimestamp();
+            lastmodified = comments_casals.getLastModified();
+
+            String creationTimestamp = String.valueOf(creationtimestamp);
+            String lastModified = String.valueOf(lastmodified);
 
             textViewCreatorid.setText(creatorid);
             textViewCasalid.setText(casalid);
             textViewContent.setText(content);
+            textViewCreationTimestamp.setText(creationTimestamp);
+            textViewLastModified.setText(lastModified);
         }
     }
 
@@ -67,9 +75,11 @@ public class Comments_CasalsDetailActivity extends AppCompatActivity {
 
         uri = (String) getIntent().getExtras().get("uri");
 
-        textViewCreatorid = (TextView) findViewById(R.id.textViewCreatorid);
-        textViewCasalid = (TextView) findViewById(R.id.textViewCasalid);
-        textViewContent = (TextView) findViewById(R.id.textViewContent);
+        textViewCreatorid = (TextView) findViewById(R.id.textViewCreatoridDetailCommentCasal);
+        textViewCasalid = (TextView) findViewById(R.id.textViewCasalidDetailCommentCasal);
+        textViewContent = (TextView) findViewById(R.id.textViewContentDetailCommentCasal);
+        textViewCreationTimestamp = (TextView) findViewById(R.id.textViewCreationTimestampDetailCommentCasal);
+        textViewLastModified = (TextView) findViewById(R.id.textViewLastModifiedDetailCommentCasal);
 
         // Execute AsyncTask
         mGetCommentCasalTask = new GetCommentCasalTask(uri);

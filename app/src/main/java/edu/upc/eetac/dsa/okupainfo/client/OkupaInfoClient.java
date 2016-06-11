@@ -27,8 +27,8 @@ import edu.upc.eetac.dsa.okupainfo.client.entity.Root;
  * Created by Guillermo on 21/05/2016.
  */
 public class OkupaInfoClient {
-    //private final static String BASE_URI = "http://10.0.2.2:8080/okupainfo";
-    private final static String BASE_URI = "http://147.83.7.204:8080/okupainfo";
+    private final static String BASE_URI = "http://10.0.2.2:8000/okupainfo";
+    //private final static String BASE_URI = "http://147.83.7.204:8080/okupainfo";
     private static OkupaInfoClient instance;
     private AuthToken authToken = null;
     private Casal casals = null;
@@ -242,7 +242,7 @@ public class OkupaInfoClient {
 
     public String getUsers(String uri) throws OkupaInfoClientException {
         if(uri==null){
-            uri = getLink(authToken.getLinks(), "current-events").getUri().toString();
+            uri = getLink(root.getLinks(), "current-users").getUri().toString();
         }
         WebTarget target = client.target(uri);
         Response response = target.request().get();
@@ -254,10 +254,9 @@ public class OkupaInfoClient {
 
     public boolean CreateUser(Form form) throws OkupaInfoClientException {
 
-        String token = authToken.getToken();
-        String uri = getLink(authToken.getLinks(), "create-event").getUri().toString();
+        String uri = getLink(root.getLinks(), "create-user").getUri().toString();
         WebTarget target = client.target(uri);
-        Invocation.Builder builder = target.request().header("X-Auth-Token", token);
+        Invocation.Builder builder = target.request();
         Response response = builder.post(Entity.entity(form, MediaType.APPLICATION_FORM_URLENCODED_TYPE));
         if (response.getStatus() == Response.Status.CREATED.getStatusCode())
             return true;

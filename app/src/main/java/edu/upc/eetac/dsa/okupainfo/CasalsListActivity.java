@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.google.gson.Gson;
@@ -59,6 +60,26 @@ public class CasalsListActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Selecciona cualquiera de estos casals para verlos en detalle", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+            }
+        });
+
+        Button CrearCasal = (Button) findViewById(R.id.CrearCasalList);
+        CrearCasal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(CasalsListActivity.this, CasalCreateActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        Button VolverMenu = (Button) findViewById(R.id.VolverMenuList);
+        VolverMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(CasalsListActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 

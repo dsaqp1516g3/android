@@ -19,6 +19,7 @@ public class UserCreateActivity extends AppCompatActivity {
     EditText etEmail = null;
     EditText etFullname = null;
     EditText etDescription = null;
+    EditText etPassword = null;
     Button btCreate = null;
     private CreateUserTask mCreateUserTask = null;
     private final static String TAG = LoginActivity.class.toString();
@@ -52,6 +53,8 @@ public class UserCreateActivity extends AppCompatActivity {
             if (result == true) {
                 Intent i = getIntent();
                 setResult(RESULT_OK, i);
+                Intent intent= new Intent(UserCreateActivity.this, LoginActivity.class);
+                startActivity(intent);
                 finish();
             }
 
@@ -72,6 +75,7 @@ public class UserCreateActivity extends AppCompatActivity {
         etEmail = (EditText)findViewById(R.id.EmailCreateUser);
         etFullname = (EditText)findViewById(R.id.FullnameCreateUser);
         etDescription = (EditText)findViewById(R.id.DescriptionCreateUser);
+        etPassword = (EditText)findViewById(R.id.PasswordCreateUser);
         btCreate = (Button)findViewById(R.id.CreateUser);
 
         btCreate.setOnClickListener(new View.OnClickListener() {
@@ -85,11 +89,13 @@ public class UserCreateActivity extends AppCompatActivity {
                     String email = etEmail.getText().toString();
                     String fullname = etFullname.getText().toString();
                     String description = etDescription.getText().toString();
+                    String password = etPassword.getText().toString();
                     Form form = new Form();
                     form.param("loginid", loginid);
                     form.param("email", email);
                     form.param("fullname", fullname);
                     form.param("description", description);
+                    form.param("password", password);
 
                     // Execute AsyncTask
                     mCreateUserTask = new CreateUserTask(form);

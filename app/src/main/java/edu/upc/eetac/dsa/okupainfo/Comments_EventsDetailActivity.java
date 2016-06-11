@@ -72,7 +72,7 @@ public class Comments_EventsDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_commentevent_detail);
+        setContentView(R.layout.activity_comments_events_detail);
 
         uri = (String) getIntent().getExtras().get("uri");
 

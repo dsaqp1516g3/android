@@ -23,13 +23,13 @@ public class UserCollectionAdapter extends BaseAdapter {
     }
 
     class ViewHolder{
-        TextView textViewLoginid;
+        TextView textViewDescription;
         TextView textViewEmail;
         TextView textViewFullname;
 
         ViewHolder(View row){
-            this.textViewLoginid = (TextView) row
-                    .findViewById(R.id.textViewLoginidUser);
+            this.textViewDescription = (TextView) row
+                    .findViewById(R.id.textViewDescriptionUser);
             this.textViewEmail = (TextView) row
                     .findViewById(R.id.textViewEmailUser);
             this.textViewFullname = (TextView) row
@@ -63,12 +63,12 @@ public class UserCollectionAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
-        String loginid = userCollection.getUsers().get(position).getLoginid();
+        String description = userCollection.getUsers().get(position).getDescription();
         String email = userCollection.getUsers().get(position).getEmail();
         String fullname = userCollection.getUsers().get(position).getFullname();
 
 
-        viewHolder.textViewLoginid.setText(loginid);
+        viewHolder.textViewDescription.setText(description);
         viewHolder.textViewEmail.setText(email);
         viewHolder.textViewFullname.setText(fullname);
         return convertView;

@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         Button mCasalButton = (Button) findViewById(R.id.Casals);
         mCasalButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View parent) {
                 Intent intent= new Intent(MainActivity.this, CasalsListActivity.class);
                 startActivity(intent);
                 finish();
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         Button mEventButton = (Button) findViewById(R.id.Events);
         mEventButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View parent) {
 
                 Intent intent= new Intent(MainActivity.this, EventsListActivity.class);
                 startActivity(intent);
@@ -34,24 +34,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button CrearCasal = (Button) findViewById(R.id.CrearCasal);
-        CrearCasal.setOnClickListener(new View.OnClickListener() {
+        Button mUserButton = (Button) findViewById(R.id.Users);
+        mUserButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent= new Intent(MainActivity.this, CasalCreateActivity.class);
+            public void onClick(View parent) {
+
+                Intent intent= new Intent(MainActivity.this, UsersListActivity.class);
                 startActivity(intent);
                 finish();
             }
         });
 
-        Button CrearEvento = (Button) findViewById(R.id.CrearEvento);
-        CrearEvento.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent= new Intent(MainActivity.this, EventCreateActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
     }
 }

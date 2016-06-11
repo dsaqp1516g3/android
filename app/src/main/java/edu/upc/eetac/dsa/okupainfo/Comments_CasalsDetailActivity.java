@@ -71,7 +71,7 @@ public class Comments_CasalsDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_commentcasal_detail);
+        setContentView(R.layout.activity_comments_casals_detail);
 
         uri = (String) getIntent().getExtras().get("uri");
 

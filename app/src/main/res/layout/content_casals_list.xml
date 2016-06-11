@@ -8,7 +8,20 @@
 
     <ListView
         android:id="@+id/listacasals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></ListView>
+
+    <Button
+        android:id="@+id/CrearCasalList"
+        android:gravity ="bottom|left"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></ListView>
+        android:layout_height="wrap_content"
+        android:text="Create casal" />
+    <Button
+        android:id="@+id/VolverMenuList"
+        android:gravity ="bottom|left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create casal" />
 
 </LinearLayout>

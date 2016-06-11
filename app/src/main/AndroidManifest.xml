@@ -26,19 +26,22 @@
         <activity
             android:name=".UsersListActivity"
             android:label="@string/title_activity_users_list"
-            android:theme="@style/AppTheme.PopupOverlay" />
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".UserDetailActivity" />
         <activity android:name=".UserCreateActivity" />
         <activity
             android:name=".Comments_EventsListActivity"
             android:label="@string/title_activity_commentevents_list"
-            android:theme="@style/AppTheme.PopupOverlay" />
+            android:parentActivityName=".EventDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Comments_EventsDetailActivity" />
         <activity android:name=".Comments_EventsCreateActivity" />
         <activity
             android:name=".Comments_CasalsListActivity"
             android:label="@string/title_activity_commentcasals_list"
-            android:theme="@style/AppTheme.PopupOverlay" />
+            android:parentActivityName=".CasalDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Comments_CasalsDetailActivity" />
         <activity android:name=".Comments_CasalsCreateActivity" />
         <activity android:name=".MainActivity" />
@@ -61,10 +64,6 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".EventDetailActivity" />
         <activity android:name=".EventCreateActivity" />
-        <activity
-            android:name=".TabActivity"
-            android:label="@string/title_activity_tab"
-            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

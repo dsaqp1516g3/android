@@ -8,48 +8,39 @@
     android:orientation="vertical"
     tools:context=".UserCreateActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Loginid" />
-
     <EditText
         android:id="@+id/LoginidCreateUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Loginid"
         android:inputType="text" />
 
-    <TextView
+    <EditText
+        android:id="@+id/PasswordCreateUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Email" />
+        android:hint="Password"
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/EmailCreateUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Email"
         android:inputType="text" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Fullname" />
 
     <EditText
         android:id="@+id/FullnameCreateUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Fullname"
         android:inputType="text" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Description" />
 
     <EditText
         android:id="@+id/DescriptionCreateUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Description"
         android:inputType="text" />
 
     <Button

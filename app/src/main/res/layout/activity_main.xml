@@ -12,22 +12,17 @@
         android:id="@+id/Casals"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Llista de casals" />
+        android:text="Lista de casals" />
     <Button
         android:id="@+id/Events"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Llista de events" />
+        android:text="Lista de eventos" />
     <Button
-        android:id="@+id/CrearCasal"
-        android:layout_width="wrap_content"
+        android:id="@+id/Users"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Crear un casal" />
-    <Button
-        android:id="@+id/CrearEvento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Crear un evento" />
+        android:text="Lista de usuarios" />
 
 
 </LinearLayout>

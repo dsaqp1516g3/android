@@ -7,8 +7,15 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <ListView
-        android:id="@+id/listusers"
+        android:id="@+id/listausers"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></ListView>
+
+    <Button
+        android:id="@+id/CrearUserList"
+        android:gravity ="bottom|left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create User" />
 
 </LinearLayout>

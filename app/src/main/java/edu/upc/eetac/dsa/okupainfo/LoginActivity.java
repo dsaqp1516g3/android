@@ -67,6 +67,16 @@ public class LoginActivity extends AppCompatActivity  {
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
+
+        Button CrearUser = (Button) findViewById(R.id.CrearUserLogin);
+        CrearUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(LoginActivity.this, UserCreateActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     /**
